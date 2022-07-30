@@ -11,7 +11,7 @@ const KASISKI_MIN_DUPLICATES: usize = 4;
 fn main() {
     pretty_env_logger::init();
 
-    print!("Enter encrypted content: ");
+    print!("Enter ciphertext: ");
     io::stdout().flush().expect("Failed to flush stdout");
 
     let mut ciphertext = String::new();
@@ -63,6 +63,8 @@ fn main() {
             }
         }
     }
+
+    // this is a mess
 
     key_lengths.sort();
     let (key_lengths, key_length_dupes) = key_lengths.partition_dedup();
